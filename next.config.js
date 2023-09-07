@@ -1,4 +1,22 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {}
+const path = require("path");
 
-module.exports = nextConfig
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  experimental: {
+    appDir: true,
+  },
+  sassOptions: {
+    includePaths: [path.join(__dirname, "src/styles")],
+  },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "image.tmdb.org",
+        pathname: "/t/p/w500/**",
+      },
+    ],
+  },
+};
+
+module.exports = nextConfig;
