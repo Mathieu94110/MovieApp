@@ -1,10 +1,12 @@
-import MediaCard from "@/components/MediaCard/MediaCard";
+import Genres from "@/components/Genres/Genres";
+import Popular from "@/components/Popular/Popular";
 import styles from "./page.module.css";
 
 export default function Home() {
   return (
     <div className={styles.main}>
-      <MediaCard mediaId={10} />
+      <Popular />
+      <Genres />
     </div>
   );
 }
