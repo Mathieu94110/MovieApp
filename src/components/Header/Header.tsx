@@ -3,36 +3,33 @@ import styles from "./Header.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
+import MovieSearch from "../MovieSearch/MovieSearch";
+import LanguageSelector from "../LanguageSelector/LanguageSelector";
 
-const Header = () => {
+const Header = ({ locale }) => {
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
         <p>
-          <Link className={styles.links} href="/">
-            MyMovieApp
-          </Link>
+          <Link href={`/${locale}`}>MyMovieApp</Link>
         </p>
       </div>
       <div className={styles.navigation}>
         <nav>
           <ul>
             <li>
-              <Link href="/series" className={styles.links}>
-                Séries
-              </Link>
+              <Link href={`/${locale}/series`}>Séries</Link>
             </li>
             <li>
-              <Link href="/movies" className={styles.links}>
-                Films
-              </Link>
+              <Link href={`/${locale}/movies`}>Films</Link>
             </li>
           </ul>
         </nav>
-        <input type="text" placeholder="Rechercher un titre ..." />
+        <MovieSearch />
         <div>
           <FontAwesomeIcon icon={faUser} />
         </div>
+        <LanguageSelector />
       </div>
     </header>
   );
