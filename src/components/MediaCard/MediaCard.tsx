@@ -1,9 +1,15 @@
 import React from "react";
 import Image from "next/image";
-import styles from "./MediaCard.module.scss";
 import Link from "next/link";
+import { mediaType } from "@/types/types";
+import styles from "./MediaCard.module.scss";
 
-const MediaCard = ({ media, locale }) => {
+interface MediaCardProps {
+  media: mediaType;
+  locale: string;
+}
+
+const MediaCard = ({ media, locale }: MediaCardProps) => {
   return (
     <div className={styles.card}>
       <Link href={`/${locale}/movies/${media.id}`}>

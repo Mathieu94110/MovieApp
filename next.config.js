@@ -4,6 +4,7 @@ const path = require("path");
 const nextConfig = {
   experimental: {
     appDir: true,
+    typedRoutes: true,
   },
   sassOptions: {
     includePaths: [path.join(__dirname, "src/styles")],

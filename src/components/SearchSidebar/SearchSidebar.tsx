@@ -1,9 +1,13 @@
 "use client";
 import { useSelectedLayoutSegment, useParams, notFound } from "next/navigation";
 import styles from "./SearchSidebar.module.scss";
-import Form from "./form/form";
+import Form from "./Form/Form";
 
-const SearchSidebar = ({ genres }) => {
+const SearchSidebar = ({
+  genres,
+}: {
+  genres: { id: number; name: string }[];
+}) => {
   const segment = useSelectedLayoutSegment();
   const { id } = useParams();
 

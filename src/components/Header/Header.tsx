@@ -1,12 +1,12 @@
 import React from "react";
-import styles from "./Header.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 import MovieSearch from "../MovieSearch/MovieSearch";
 import LanguageSelector from "../LanguageSelector/LanguageSelector";
+import styles from "./Header.module.scss";
 
-const Header = ({ locale }) => {
+const Header = ({ locale }: { locale: string }) => {
   return (
     <header className={styles.header}>
       <div className={styles.logo}>

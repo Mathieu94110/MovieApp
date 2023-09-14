@@ -1,10 +1,12 @@
 import React from "react";
+import Link from "next/link";
 
 const NotFound = () => {
   return (
     <div className="error">
       <h1>404</h1>
-      <p>Oups, la page que vous demandez n&apos;existe pas.</p>
+      <p>La page que vous demandez n&apos;existe pas.</p>
+      <Link href="/">Retour à la page d&apos;accueil</Link>
     </div>
   );
 };

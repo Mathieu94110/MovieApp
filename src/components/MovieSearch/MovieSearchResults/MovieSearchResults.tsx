@@ -1,9 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { mediaType } from "@/types/types";
 import styles from "./MovieSearchResults.module.scss";
 
-const MovieSearchResults = ({ movieResults, locale }) => {
+const MovieSearchResults = ({
+  movieResults,
+  locale,
+}: {
+  movieResults: mediaType[];
+  locale: string;
+}) => {
   return (
     <div className={styles.searchResults}>
       {movieResults.map((movie) => (

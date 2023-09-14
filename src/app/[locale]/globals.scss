@@ -29,3 +29,13 @@ a {
     font-size: 16px;
   }
 }
+.error-button {
+  padding: 6px 4px;
+  border: 1px solid $secondaryColor;
+  background-color: $whiteColor;
+  color: $secondaryColor;
+  font-weight: 600;
+  &:hover {
+    cursor: pointer;
+  }
+}

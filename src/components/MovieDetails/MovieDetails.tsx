@@ -1,10 +1,11 @@
 import React from "react";
 import Image from "next/image";
-import styles from "./MovieDetails.module.scss";
 import MovieCredits from "../MovieCredits/MovieCredits";
 import { Suspense } from "react";
+import { mediaType } from "@/types/types";
+import styles from "./MovieDetails.module.scss";
 
-const MovieDetails = ({ movie }) => {
+const MovieDetails = ({ movie }: { movie: mediaType }) => {
   return (
     <div className={styles.details}>
       <div className={styles.background}>

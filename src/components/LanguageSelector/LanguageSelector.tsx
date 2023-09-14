@@ -1,15 +1,14 @@
 "use client";
 import { useCurrentLanguage } from "@/hooks/useCurrentLanguage";
-import styles from "./LanguageSelector.module.scss";
-
 import { availableLocales } from "@/utils/i18n";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import styles from "./LanguageSelector.module.scss";
 
 const LanguageSelector = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   const currentLanguage = useCurrentLanguage();
 
   useEffect(() => {

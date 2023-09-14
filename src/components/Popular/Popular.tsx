@@ -3,8 +3,9 @@ import React from "react";
 import MediaCard from "../MediaCard/MediaCard";
 import styles from "./Popular.module.scss";
 import { getDictionary } from "@/utils/dictionaries";
+import { mediaType } from "@/types/types";
 
-const Popular = async ({ locale }) => {
+const Popular = async ({ locale }: { locale: string }) => {
   const { results } = await getMovieByPath("/movie/popular", [], locale);
   const i18n = await getDictionary(locale);
   const popularMovies = results.slice(0, 6);
@@ -12,7 +13,7 @@ const Popular = async ({ locale }) => {
     <div>
       <h2>{i18n.popular.title}</h2>
       <div className={styles.container}>
-        {popularMovies.map((movie) => (
+        {popularMovies.map((movie: mediaType) => (
           <MediaCard key={movie.id} media={movie} locale={locale} />
         ))}
       </div>

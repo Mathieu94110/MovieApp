@@ -4,10 +4,23 @@ import { getMovieByPath } from "@/utils/movieClient";
 import { notFound } from "next/navigation";
 import React, { Suspense } from "react";
 
+interface MovieIdPageProps {
+  params: { id: string; locale: string };
+}
+
+export async function generateMetadata({ params }: MovieIdPageProps) {
+  const { id, locale } = params;
+  const movie = await getMovieByPath(`/movie/${id}`, [], locale);
+
+  return {
+    title: movie.title,
+    description: movie.overview,
+  };
+}
 export const dynamic = "force-static";
 export const revalidate = 3600;
 
-const MovieIdPage = async ({ params: { id, locale } }) => {
+const MovieIdPage = async ({ params: { id, locale } }: MovieIdPageProps) => {
   const movie = await getMovieByPath(`/movie/${id}`, [], locale);
 
   if (!movie.original_title) {

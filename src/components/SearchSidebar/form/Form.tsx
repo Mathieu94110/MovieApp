@@ -6,7 +6,7 @@ const Form = () => {
   const router = useRouter();
   const pathname = usePathname();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
     const searchParams = new URLSearchParams();

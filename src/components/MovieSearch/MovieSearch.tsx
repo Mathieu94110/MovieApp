@@ -3,18 +3,19 @@
 import { useState } from "react";
 import { DebounceInput } from "react-debounce-input";
 import MovieSearchResults from "./MovieSearchResults/MovieSearchResults";
-import styles from "./MovieSearch.module.scss";
 import { useCurrentLanguage } from "@/hooks/useCurrentLanguage";
+import { mediaType } from "@/types/types";
+import styles from "./MovieSearch.module.scss";
 
 const MovieSearch = () => {
   const [movieResults, setMovieResults] = useState([]);
   const [hasFocus, setHasFocus] = useState(false);
-  const currentLanguage = useCurrentLanguage();
+  const currentLanguage = useCurrentLanguage() as string;
 
-  const updateMovieSearch = async (query) => {
+  const updateMovieSearch = async (query: string) => {
     const response = await fetch(`/api/movies/search?query=${query}`);
     const { results } = await response.json();
-    setMovieResults(results.filter((movie) => movie.backdrop_path));
+    setMovieResults(results.filter((movie: mediaType) => movie.backdrop_path));
   };
 
   return (
