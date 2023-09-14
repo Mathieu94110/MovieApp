@@ -1,8 +1,11 @@
+"use client";
+
 import Header from "@/components/Header/Header";
 import "./globals.scss";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { roboto, montserrat } from "@/fonts";
 import { availableLocales } from "@/utils/i18n";
+import { SessionProvider } from "next-auth/react";
 
 export const metadata = {
   title: "Create Next App",
@@ -15,12 +18,14 @@ export function generateStaticParams() {
   }));
 }
 
-export default function RootLayout({ children, params: { locale } }) {
+export default function RootLayout({ children, params: { locale }, session }) {
   return (
     <html lang="en">
       <body className={`${roboto.variable} ${montserrat.variable}`}>
-        <Header locale={locale} />
-        <main>{children}</main>
+        <SessionProvider session={session}>
+          <Header locale={locale} />
+          <main>{children}</main>
+        </SessionProvider>
       </body>
     </html>
   );
