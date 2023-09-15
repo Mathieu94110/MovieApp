@@ -3,5 +3,5 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: calc(100vh - 51px);
+  padding: 20px;
 }

@@ -1,20 +1,35 @@
 @import "variables";
-
-.container {
+.genresTitle {
+  text-align: center;
+}
+.genresList {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 10px;
 
   .genre {
-    padding: 10px 0;
+    padding: 6px 3px;
     background-color: $primaryColor;
     color: $whiteColor;
     font-weight: bold;
     flex: 0 0 calc(20% - 20px);
     text-align: center;
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
     p {
       margin: 0;
+    }
+  }
+}
+@media screen and (min-width: 1400px) {
+  .genresTitle {
+    text-align: left;
+  }
+  .genresList {
+    gap: 20px;
+    .genre {
+      padding: 10px 0;
     }
   }
 }

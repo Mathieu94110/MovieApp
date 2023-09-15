@@ -8,8 +8,8 @@ const Genres = async ({ locale }: { locale: string }) => {
   const i18n = await getDictionary(locale);
   return (
     <div>
-      <h2>{i18n.genres.title}</h2>
-      <div className={styles.container}>
+      <h2 className={styles.genresTitle}>{i18n.genres.title}</h2>
+      <div className={styles.genresList}>
         {genres.map((genre: { id: number; name: string }) => (
           <div key={genre.id} className={styles.genre}>
             <Link href={`/${locale}/movies/genres/${genre.id}`}>

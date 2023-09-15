@@ -10,9 +10,9 @@ const Popular = async ({ locale }: { locale: string }) => {
   const i18n = await getDictionary(locale);
   const popularMovies = results.slice(0, 6);
   return (
-    <div>
-      <h2>{i18n.popular.title}</h2>
-      <div className={styles.container}>
+    <div className={styles.popular}>
+      <h2 className={styles.popularTitle}>{i18n.popular.title}</h2>
+      <div className={styles.popularList}>
         {popularMovies.map((movie: mediaType) => (
           <MediaCard key={movie.id} media={movie} locale={locale} />
         ))}

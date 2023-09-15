@@ -1,8 +1,30 @@
-.container {
-  display: flex;
-  gap: 30px;
+.popular {
+  width: 100%;
+}
 
+.popularTitle {
+  width: 100%;
+  text-align: center;
+}
+
+.popularList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  place-content: center;
   > div {
-    width: 200px;
+    width: 160px;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .popularTitle {
+    text-align: left;
+  }
+  .popularList {
+    gap: 30px;
+    > div {
+      width: 200px;
+    }
   }
 }
