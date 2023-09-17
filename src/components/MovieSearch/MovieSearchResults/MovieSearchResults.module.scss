@@ -2,13 +2,15 @@
 
 .searchResults {
   position: absolute;
-  z-index: 2;
+  z-index: 4;
   background-color: $whiteColor;
-  top: 45px;
+  top: 51px;
   padding: 10px;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
   font-family: var(--font-montserrat);
-
+  max-height: 50vh;
+  overflow-y: auto;
+  right: 0px;
   > div > a {
     display: flex;
     align-items: center;
@@ -33,5 +35,11 @@
       font-size: 13px;
       font-weight: 500;
     }
+  }
+}
+@media screen and (min-width: 700px) {
+  .searchResults {
+    max-height: 80vh;
+    right: auto;
   }
 }

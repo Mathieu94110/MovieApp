@@ -26,10 +26,13 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    ".next/types/**/*.ts",
-    "src/utils/i18n.js",
-    "src/utils/dictionaries.js",
-    "src/middleware.js"
+    ".next/types/**/*.ts"
+    // , "src/utils/movieClient.js"
+    // "src/utils/i18n.js",
+    // "src/utils/dictionaries.js",
+    // "src/middleware.js",
+    // "src/utils/movieClient.ts"
+    // "src/app/api/movies/search/routes.js"
   ],
   "exclude": ["node_modules"]
 }

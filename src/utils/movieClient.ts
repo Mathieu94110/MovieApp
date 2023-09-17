@@ -3,7 +3,7 @@ import "server-only";
 export const getMovieByPath = (
   path: string,
   params: { key: string; value: string }[] = [],
-  language = "fr-FR"
+  language = "fr"
 ) => {
   const url = new URL(`${process.env.TMDB_API_URL}${path}`);
   url.searchParams.append("api_key", process.env.TMDB_API_KEY as string);

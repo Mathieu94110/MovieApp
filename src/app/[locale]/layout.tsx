@@ -1,28 +1,27 @@
 "use client";
 
 import Header from "@/components/Header/Header";
-import "./globals.scss";
-import "@fortawesome/fontawesome-svg-core/styles.css";
+import { useCurrentLanguage } from "@/hooks/useCurrentLanguage";
 import { roboto, montserrat } from "@/fonts";
-import { availableLocales } from "@/utils/i18n";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import "./globals.scss";
 
 interface AppLayoutProps {
   children: React.ReactNode;
   params: { locale: string };
 }
 
-export function generateStaticParams() {
-  return availableLocales.map((locale) => ({
-    locale,
-  }));
-}
-
 export default function RootLayout({
   children,
   params: { locale },
 }: AppLayoutProps) {
+  const currentLanguage = useCurrentLanguage();
   return (
-    <html lang="fr">
+    <html
+      lang={
+        Array.isArray(currentLanguage) ? currentLanguage[0] : currentLanguage
+      }
+    >
       <body className={`${roboto.variable} ${montserrat.variable}`}>
         <Header locale={locale} />
         <main>{children}</main>

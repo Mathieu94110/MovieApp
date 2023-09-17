@@ -4,9 +4,17 @@
   margin-top: 20px;
 
   h1 {
-    font-size: 24px;
+    font-size: 18px;
+    margin-bottom: 20px;
     color: $secondaryColor;
     font-weight: bold;
-    margin-bottom: 25px;
+  }
+}
+@media screen and (min-width: 600px) {
+  .sidebar {
+    h1 {
+      font-size: 24px;
+      margin-bottom: 25px;
+    }
   }
 }

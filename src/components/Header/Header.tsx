@@ -1,18 +1,18 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
+import Image from "next/image";
 import MovieSearch from "../MovieSearch/MovieSearch";
 import LanguageSelector from "../LanguageSelector/LanguageSelector";
 import styles from "./Header.module.scss";
+import appLogo from "../../../public/Films-et-Series.jpeg";
 
 const Header = ({ locale }: { locale: string }) => {
   return (
     <header className={styles.header}>
-      <div className={styles.logo}>
-        <p>
-          <Link href={`/${locale}`}>MyMovieApp</Link>
-        </p>
+      <div className={styles.logoContainer}>
+        <Link href={`/${locale}`} className={styles.logo}>
+          <Image src={appLogo} alt="Films et series" height={40} />
+        </Link>
       </div>
       <div className={styles.navigation}>
         <nav>
@@ -25,12 +25,9 @@ const Header = ({ locale }: { locale: string }) => {
             </li>
           </ul>
         </nav>
-        <MovieSearch />
-        <div>
-          <FontAwesomeIcon icon={faUser} />
-        </div>
-        <LanguageSelector />
       </div>
+      <MovieSearch />
+      <LanguageSelector />
     </header>
   );
 };
