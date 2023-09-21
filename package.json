@@ -29,7 +29,6 @@
     "typescript": "5.2.2"
   },
   "devDependencies": {
-    "@types/negotiator": "^0.6.1",
-    "prisma": "^5.3.0"
+    "@types/negotiator": "^0.6.1"
   }
 }
