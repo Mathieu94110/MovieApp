@@ -2,10 +2,15 @@ import React from "react";
 import Image from "next/image";
 import MovieCredits from "../MovieCredits/MovieCredits";
 import { Suspense } from "react";
-import { mediaType } from "@/types/types";
 import styles from "./MovieDetails.module.scss";
 
-const MovieDetails = ({ movie }: { movie: mediaType }) => {
+const MovieDetails = ({
+  movie,
+  type,
+}: {
+  movie: any;
+  type: "movies" | "series";
+}) => {
   return (
     <div className={styles.details}>
       <div className={styles.background}>
@@ -25,23 +30,39 @@ const MovieDetails = ({ movie }: { movie: mediaType }) => {
         <div className={styles.description}>
           <h1>
             {movie.title}{" "}
-            <span className={styles.releaseDate}>
-              ({new Date(movie.release_date).toLocaleDateString("fr-FR")})
-            </span>
+            {type === "movies" ? (
+              <span className={styles.releaseDate}>
+                ({new Date(movie.release_date).toLocaleDateString("fr-FR")})
+              </span>
+            ) : (
+              <span className={styles.releaseDate}>
+                <strong>
+                  Première parution:{" "}
+                  {new Date(movie.first_air_date).toLocaleDateString("fr-FR")}
+                </strong>
+              </span>
+            )}
           </h1>
           <p className={styles.production}>
             Production :{" "}
             <span>
-              {movie.production_companies
-                .map((company) => company.name)
-                .join(", ")}
+              {movie.production_companies.length > 0
+                ? movie.production_companies
+                    .map((company) => company.name)
+                    .join(", ")
+                : "Aucune information"}
             </span>
           </p>
           <h2>Synopsis</h2>
-          <p className={styles.overview}>{movie.overview}</p>
+          <p className={styles.overview}>
+            {movie.overview ? movie.overview : "Aucune information"}
+          </p>
           <div className={styles.credits}>
             <Suspense fallback={<p>Chargement ...</p>}>
-              <MovieCredits movieId={movie.id} />
+              <MovieCredits
+                movieId={movie.id}
+                type={type === "movies" ? "movie" : "tv"}
+              />
             </Suspense>
           </div>
         </div>

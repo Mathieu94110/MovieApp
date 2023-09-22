@@ -1,8 +1,8 @@
 import { getMovieByPath } from "@/utils/movieClient";
 import MediaCard from "@/components/MediaCard/MediaCard";
-import styles from "./SearchResults.module.scss";
+import styles from "./SearchMovieResults.module.scss";
 
-const SearchResults = async ({ searchParams, genreId, locale }) => {
+const SearchMovieResults = async ({ searchParams, genreId, locale }) => {
   const { results } = await getMovieByPath(
     "/discover/movie",
     [
@@ -18,10 +18,10 @@ const SearchResults = async ({ searchParams, genreId, locale }) => {
       {results
         .filter((movie) => movie.poster_path)
         .map((movie) => (
-          <MediaCard key={movie.id} media={movie} />
+          <MediaCard key={movie.id} media={movie} type="movies"/>
         ))}
     </div>
   );
 };
 
-export default SearchResults;
+export default SearchMovieResults;

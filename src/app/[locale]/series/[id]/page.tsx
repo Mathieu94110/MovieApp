@@ -4,13 +4,13 @@ import { getMovieByPath } from "@/utils/movieClient";
 import { notFound } from "next/navigation";
 import React, { Suspense } from "react";
 
-interface MovieIdPageProps {
+interface SerieIdPageProps {
   params: { id: string; locale: string };
 }
 
-export async function generateMetadata({ params }: MovieIdPageProps) {
+export async function generateMetadata({ params }: SerieIdPageProps) {
   const { id, locale } = params;
-  const movie = await getMovieByPath(`/movie/${id}`, [], locale);
+  const movie = await getMovieByPath(`/tv/${id}`, [], locale);
 
   return {
     title: movie.title,
@@ -20,21 +20,21 @@ export async function generateMetadata({ params }: MovieIdPageProps) {
 export const dynamic = "force-static";
 export const revalidate = 3600;
 
-const MovieIdPage = async ({ params: { id, locale } }: MovieIdPageProps) => {
-  const movie = await getMovieByPath(`/movie/${id}`, [], locale);
+const SerieIdPage = async ({ params: { id, locale } }: SerieIdPageProps) => {
+  const serie = await getMovieByPath(`/tv/${id}`, [], locale);
 
-  if (!movie.original_title) {
+  if (!serie.name) {
     return notFound();
   }
 
   return (
     <div>
-      <MovieDetails movie={movie} type="movies" />
+      <MovieDetails movie={serie} type="series" />
       <Suspense fallback={<p>Chargement ...</p>}>
-        <SimilarMovies movieId={movie.id} locale={locale} type="movie" />
+        <SimilarMovies movieId={serie.id} locale={locale} type="tv" />
       </Suspense>
     </div>
   );
 };
 
-export default MovieIdPage;
+export default SerieIdPage;

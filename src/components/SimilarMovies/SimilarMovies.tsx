@@ -7,12 +7,14 @@ import styles from "./SimilarMovies.module.scss";
 const SimilarMovies = async ({
   movieId,
   locale,
+  type,
 }: {
   movieId: number;
   locale: string;
+  type: "movie" | "tv";
 }) => {
   const { results } = await getMovieByPath(
-    `/movie/${movieId}/similar`,
+    `/${type}/${movieId}/similar`,
     [],
     locale
   );
@@ -20,7 +22,7 @@ const SimilarMovies = async ({
     <div className={styles.similar}>
       <div className={styles.list}>
         {results.slice(0, 6).map((movie: mediaType) => (
-          <MediaCard media={movie} key={movie.id} locale={locale} />
+          <MediaCard media={movie} key={movie.id} type={type} />
         ))}
       </div>
     </div>

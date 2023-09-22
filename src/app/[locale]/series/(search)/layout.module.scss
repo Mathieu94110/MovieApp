@@ -1,0 +1,12 @@
+.searchContainer {
+    display: flex;
+    flex-direction: column;
+    margin: 0 30px;
+  }
+  @media screen and (min-width: 800px) {
+    .searchContainer {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+  

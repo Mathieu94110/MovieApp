@@ -4,8 +4,14 @@ import { getMovieByPath } from "@/utils/movieClient";
 import { mediaCredits } from "@/types/types";
 import styles from "./MovieCredits.module.scss";
 
-const MovieCredits = async ({ movieId }: { movieId: number }) => {
-  const { cast } = await getMovieByPath(`/movie/${movieId}/credits`);
+const MovieCredits = async ({
+  movieId,
+  type,
+}: {
+  movieId: number;
+  type: "movie" | "tv";
+}) => {
+  const { cast } = await getMovieByPath(`/${type}/${movieId}/credits`);
   return (
     <div className={styles.movieCredits}>
       {cast.slice(0, 4).map((person: mediaCredits) => (

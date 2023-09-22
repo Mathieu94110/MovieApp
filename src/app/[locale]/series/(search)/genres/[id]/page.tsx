@@ -1,5 +1,5 @@
 import React from "react";
-import SearchResults from "../../SearchMovieResults";
+import SearchRe
 
 const GenreIdPage = ({ params: { id, locale }, searchParams }) => {
   return (

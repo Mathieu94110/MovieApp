@@ -1,9 +1,9 @@
 import React from "react";
-import SearchResults from "./SearchResults";
+import SearchMovieResults from "./SearchMovieResults";
 import { searchParams } from "@/types/types";
 
 const MoviesPage = ({ searchParams }: { searchParams: searchParams }) => {
-  return <SearchResults searchParams={searchParams} />;
+  return <SearchMovieResults searchParams={searchParams} />;
 };
 
 export default MoviesPage;
