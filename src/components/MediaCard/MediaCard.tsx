@@ -4,15 +4,10 @@ import Link from "next/link";
 import { mediaType } from "@/types/types";
 import styles from "./MediaCard.module.scss";
 
-interface MediaCardProps {
-  media: mediaType;
-  locale: string;
-}
-
-const MediaCard = ({ media, locale }: MediaCardProps) => {
+const MediaCard = ({ media }: { media: mediaType }) => {
   return (
     <div className={styles.card}>
-      <Link href={`/${locale}/movies/${media.id}`}>
+      <Link href={`/movies/${media.id}`}>
         <div className={styles.image}>
           <Image
             src={`${process.env.NEXT_PUBLIC_TMDB_IMAGE_BASE_PATH}/w500${media.poster_path}`}
