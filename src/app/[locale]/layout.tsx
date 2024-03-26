@@ -1,4 +1,5 @@
 import Header from "@/components/Header/Header";
+import AuthProvider from "@/components/AuthProvider/AuthProvider"
 import "./globals.scss";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { roboto, montserrat } from "@/fonts";
@@ -14,7 +15,7 @@ export default function RootLayout({ children, params: { locale } }) {
     <html lang="en">
       <body className={`${roboto.variable} ${montserrat.variable}`}>
         <Header locale={locale} />
-        <main>{children}</main>
+        <main><AuthProvider>{children}</AuthProvider></main>
       </body>
     </html>
   );

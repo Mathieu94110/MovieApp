@@ -5,6 +5,8 @@ import MovieSearch from "../MovieSearch/MovieSearch";
 import LanguageSelector from "../LanguageSelector/LanguageSelector";
 import styles from "./Header.module.scss";
 import appLogo from "../../../public/Films-et-Series.jpeg";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
 
 const Header = ({ locale }: { locale: string }) => {
   return (
@@ -23,10 +25,18 @@ const Header = ({ locale }: { locale: string }) => {
             <li>
               <Link href={`/${locale}/movies`}>Films</Link>
             </li>
+            <li>
+              <Link href={`/${locale}/signup`}>Inscription</Link>
+            </li>
           </ul>
         </nav>
       </div>
       <MovieSearch />
+      <div>
+        <Link href={`/${locale}/user/profile`}>
+          <FontAwesomeIcon icon={faUser} />
+        </Link>
+      </div>
       <LanguageSelector />
     </header>
   );
