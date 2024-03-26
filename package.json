@@ -1,5 +1,5 @@
 {
-  "name": "movie-app",
+  "name": "my-movie-app",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,26 +9,27 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@formatjs/intl-localematcher": "^0.4.2",
-    "@fortawesome/fontawesome-svg-core": "^6.4.2",
-    "@fortawesome/free-regular-svg-icons": "^6.4.2",
-    "@fortawesome/free-solid-svg-icons": "^6.4.2",
+    "@formatjs/intl-localematcher": "^0.4.0",
+    "@fortawesome/fontawesome-svg-core": "^6.4.0",
+    "@fortawesome/free-regular-svg-icons": "^6.4.0",
+    "@fortawesome/free-solid-svg-icons": "^6.4.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
-    "@types/node": "20.5.9",
-    "@types/react": "18.2.21",
-    "@types/react-dom": "18.2.7",
-    "eslint": "8.48.0",
-    "eslint-config-next": "^13.4.19",
+    "@prisma/client": "^4.16.2",
+    "bcrypt": "^5.1.0",
+    "eslint": "8.37.0",
+    "eslint-config-next": "13.4.0",
     "negotiator": "^0.6.3",
-    "next": "13.4.5",
+    "next": "13.4.0",
+    "next-auth": "^4.22.1",
     "react": "18.2.0",
     "react-debounce-input": "^3.3.0",
     "react-dom": "18.2.0",
-    "sass": "^1.66.1",
-    "server-only": "^0.0.1",
-    "typescript": "5.2.2"
+    "sass": "^1.60.0",
+    "server-only": "^0.0.1"
   },
   "devDependencies": {
-    "@types/negotiator": "^0.6.1"
+    "@types/node": "20.11.30",
+    "@types/react": "18.2.71",
+    "prisma": "^4.16.2"
   }
 }
