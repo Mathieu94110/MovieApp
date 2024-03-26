@@ -1,23 +1,21 @@
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
 import styles from "./MediaCard.module.scss";
+import Link from "next/link";
+import Like from "./Like/Like";
 
-const MediaCard = ({
-  media,
-  type,
-}: {
+const MediaCard = ({ media, locale, type }: {
   media: any;
   type: "movies" | "series" | "movie" | "tv";
+  locale: "fr" | "en"
 }) => {
+  console.log('media =', media, "type =", type, 'locale =', locale)
   return (
     <div className={styles.card}>
-      <Link
-        href={`/${
-          type === "movies" || type === "movie" ? "movies" : "series"
-        }/${media.id}`}
-      >
+      <Link href={`/${locale}/${type === "movies" || type === "movie" ? "movies" : "series"
+        }/${media.id}`}>
         <div className={styles.image}>
+          <Like mediaId={media.id} />
           <Image
             src={`${process.env.NEXT_PUBLIC_TMDB_IMAGE_BASE_PATH}/w500${media.poster_path}`}
             alt={media.title}

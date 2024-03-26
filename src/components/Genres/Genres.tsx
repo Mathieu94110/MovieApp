@@ -3,7 +3,7 @@ import Link from "next/link";
 import styles from "./Genres.module.scss";
 import { getDictionary } from "@/utils/dictionaries";
 
-const Genres = async ({ locale }: { locale: string }) => {
+const Genres = async ({ locale }: { locale: any }) => {
   const { genres } = await getMovieByPath("/genre/movie/list", [], locale);
   const i18n = await getDictionary(locale);
   return (

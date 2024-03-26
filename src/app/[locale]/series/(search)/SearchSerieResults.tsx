@@ -19,7 +19,7 @@ const SearchSerieResults = async ({ searchParams, genreId, locale }) => {
       {results
         .filter((serie) => serie.poster_path)
         .map((serie) => (
-          <MediaCard key={serie.id} media={serie} type="series" />
+          <MediaCard key={serie.id} media={serie} locale={locale} type="series" />
         ))}
     </div>
   );

@@ -8,7 +8,7 @@ import appLogo from "../../../public/Films-et-Series.jpeg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 
-const Header = ({ locale }: { locale: string }) => {
+const Header = ({ locale }: { locale: any }) => {
   return (
     <header className={styles.header}>
       <div className={styles.logoContainer}>

@@ -9,7 +9,7 @@ const MovieSearchResults = ({
   locale,
 }: {
   movieResults: mediaType[];
-  locale: string;
+  locale: any;
 }) => {
   return (
     <div className={styles.searchResults}>
