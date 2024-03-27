@@ -48,8 +48,8 @@ const MovieDetails = ({
             <span>
               {movie.production_companies.length > 0
                 ? movie.production_companies
-                    .map((company) => company.name)
-                    .join(", ")
+                  .map((company: { name: string }) => company.name)
+                  .join(", ")
                 : "Aucune information"}
             </span>
           </p>
