@@ -5,7 +5,7 @@ import styles from "./Popular.module.scss";
 import { getDictionary } from "@/utils/dictionaries";
 import { mediaType } from "@/types/types";
 
-const Popular = async ({ locale }: { locale: string }) => {
+const Popular = async ({ locale }: { locale: 'en' | 'fr' }) => {
   const { results } = await getMovieByPath("/movie/popular", [], locale);
   const i18n = await getDictionary(locale);
   const popularMovies = results.slice(0, 6);

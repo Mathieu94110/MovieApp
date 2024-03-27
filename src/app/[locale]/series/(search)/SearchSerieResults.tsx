@@ -2,7 +2,7 @@ import { getMovieByPath } from "@/utils/movieClient";
 import MediaCard from "@/components/MediaCard/MediaCard";
 import styles from "./SearchSerieResults.module.scss";
 
-const SearchSerieResults = async ({ searchParams, genreId, locale }) => {
+const SearchSerieResults = async ({ searchParams, genreId, locale }: any) => {
   const { results } = await getMovieByPath(
     "/discover/tv",
     [
@@ -17,8 +17,8 @@ const SearchSerieResults = async ({ searchParams, genreId, locale }) => {
   return (
     <div className={styles.results}>
       {results
-        .filter((serie) => serie.poster_path)
-        .map((serie) => (
+        .filter((serie: any) => serie.poster_path)
+        .map((serie: any) => (
           <MediaCard key={serie.id} media={serie} locale={locale} type="series" />
         ))}
     </div>
