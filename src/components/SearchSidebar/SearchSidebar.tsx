@@ -5,7 +5,7 @@ import {
   notFound,
   usePathname,
 } from "next/navigation";
-import Form from "./Form/Form";
+import Form from "./form/Form";
 import styles from "./SearchSideBar.module.scss";
 
 const SearchSidebar = ({
