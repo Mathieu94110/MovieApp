@@ -9,7 +9,6 @@ const MediaCard = ({ media, locale, type }: {
   type: "movies" | "series" | "movie" | "tv";
   locale: "fr" | "en"
 }) => {
-  console.log('media =', media, "type =", type, 'locale =', locale)
   return (
     <div className={styles.card}>
       <Link href={`/${locale}/${type === "movies" || type === "movie" ? "movies" : "series"
