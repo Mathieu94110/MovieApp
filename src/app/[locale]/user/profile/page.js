@@ -3,7 +3,7 @@ import styles from "./page.module.scss";
 import { getServerSession } from "next-auth";
 import prisma from "@/utils/prisma";
 import { getHydratedMovies } from "@/utils/movieClient";
-import MediaCard from "@/components/media-card/MediaCard";
+import MediaCard from "@/components/MediaCard/MediaCard";
 
 const ProfilePage = async ({ params: { locale } }) => {
     const { user: userSession } = await getServerSession();
@@ -26,7 +26,7 @@ const ProfilePage = async ({ params: { locale } }) => {
             </div>
             <div className={styles.list}>
                 {movies.map((movie) => (
-                    <MediaCard key={movie.id} media={movie} locale={locale} />
+                    <MediaCard key={movie.id} media={movie} locale={locale} type="movies" />
                 ))}
             </div>
         </div>
