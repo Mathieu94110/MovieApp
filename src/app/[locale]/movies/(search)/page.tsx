@@ -2,8 +2,13 @@ import React from "react";
 import SearchMovieResults from "./SearchMovieResults";
 import { searchParams } from "@/types/types";
 
-const MoviesPage = ({ searchParams }: { searchParams: searchParams }) => {
-  return <SearchMovieResults searchParams={searchParams} />;
+interface MoviesPageProps {
+  searchParams: searchParams
+  params: { locale: string }
+}
+
+const MoviesPage = ({ searchParams, params: { locale } }: MoviesPageProps) => {
+  return <SearchMovieResults searchParams={searchParams} locale={locale} />;
 };
 
 export default MoviesPage;

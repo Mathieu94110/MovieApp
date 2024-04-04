@@ -1,9 +1,15 @@
 import React from "react";
-import SearchResults from "../../SearchMovieResults";
+import SearchMovieResults from "../../SearchMovieResults";
+import { searchParams } from "@/types/types";
 
-const GenreIdPage = ({ params: { id, locale }, searchParams }: any) => {
+interface MoviesGenreIdProps {
+  searchParams: searchParams
+  params: { locale: string, id: number }
+}
+
+const GenreIdPage = ({ params: { id, locale }, searchParams }: MoviesGenreIdProps) => {
   return (
-    <SearchResults searchParams={searchParams} genreId={id} locale={locale} />
+    <SearchMovieResults searchParams={searchParams} genreId={id} locale={locale} />
   );
 };
 

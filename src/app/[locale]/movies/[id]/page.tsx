@@ -7,16 +7,6 @@ import React, { Suspense } from "react";
 interface MovieIdPageProps {
   params: { id: string; locale: string };
 }
-
-export async function generateMetadata({ params }: MovieIdPageProps) {
-  const { id, locale } = params;
-  const movie = await getMovieByPath(`/movie/${id}`, [], locale);
-
-  return {
-    title: movie.title,
-    description: movie.overview,
-  };
-}
 export const dynamic = "force-static";
 export const revalidate = 3600;
 
@@ -29,9 +19,9 @@ const MovieIdPage = async ({ params: { id, locale } }: MovieIdPageProps) => {
 
   return (
     <div>
-      <MovieDetails movie={movie} type="movies" />
+      <MovieDetails movie={movie} />
       <Suspense fallback={<p>Chargement ...</p>}>
-        <SimilarMovies movieId={movie.id} locale={locale} type="movie" />
+        <SimilarMovies movieId={movie.id} locale={locale} />
       </Suspense>
     </div>
   );

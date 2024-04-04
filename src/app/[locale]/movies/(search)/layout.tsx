@@ -12,7 +12,6 @@ const MovieSearchLayout = async ({
   params: { locale },
 }: MovieSearchLayoutProps) => {
   const { genres } = await getMovieByPath("/genre/movie/list", [], locale);
-
   return (
     <div className={styles.searchContainer}>
       <SearchSidebar genres={genres} />
