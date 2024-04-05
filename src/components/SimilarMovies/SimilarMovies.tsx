@@ -14,7 +14,7 @@ const SimilarMovies = async ({ movieId, locale }: any) => {
     <div className={styles.similar}>
       <div className={styles.list}>
         {results.slice(0, 6).map((movie: mediaType) => (
-          <MediaCard media={movie} key={movie.id} locale={locale} />
+          <MediaCard media={movie} key={movie.id} locale={locale} type="movies" />
         ))}
       </div>
     </div>

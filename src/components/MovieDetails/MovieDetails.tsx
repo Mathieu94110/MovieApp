@@ -4,7 +4,11 @@ import styles from "./MovieDetails.module.scss";
 import MovieCredits from "../MovieCredits/MovieCredits";
 import { Suspense } from "react";
 
-const MovieDetails = ({ movie }) => {
+const MovieDetails = ({ movie,
+  type }: {
+    movie: any;
+    type: "movies" | "series";
+  }) => {
   return (
     <div className={styles.details}>
       <div className={styles.background}>
@@ -24,20 +28,33 @@ const MovieDetails = ({ movie }) => {
         <div className={styles.description}>
           <h1>
             {movie.title}{" "}
-            <span className={styles.releaseDate}>
-              ({new Date(movie.release_date).toLocaleDateString("fr-FR")})
-            </span>
+            {type === "movies" ? (
+              <span className={styles.releaseDate}>
+                ({new Date(movie.release_date).toLocaleDateString("fr-FR")})
+              </span>
+            ) : (
+              <span className={styles.releaseDate}>
+                <strong>
+                  Première parution:{" "}
+                  {new Date(movie.first_air_date).toLocaleDateString("fr-FR")}
+                </strong>
+              </span>
+            )}
           </h1>
           <p className={styles.production}>
             Production :{" "}
             <span>
-              {movie.production_companies
-                .map((company) => company.name)
-                .join(", ")}
+              {movie.production_companies.length > 0
+                ? movie.production_companies
+                  .map((company: { name: string }) => company.name)
+                  .join(", ")
+                : "Aucune information"}
             </span>
           </p>
           <h2>Synopsis</h2>
-          <p className={styles.overview}>{movie.overview}</p>
+          <p className={styles.overview}>
+            {movie.overview ? movie.overview : "Aucune information"}
+          </p>
           <div className={styles.credits}>
             <Suspense fallback={<p>Chargement ...</p>}>
               <MovieCredits movieId={movie.id} />

@@ -26,7 +26,7 @@ const ProfilePage = async ({ params: { locale } }) => {
             </div>
             <div className={styles.list}>
                 {movies.map((movie) => (
-                    <MediaCard key={movie.id} media={movie} locale={locale} />
+                    <MediaCard key={movie.id} media={movie} locale={locale} type="movies" />
                 ))}
             </div>
         </div>

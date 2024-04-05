@@ -11,7 +11,6 @@ interface SerieIdPageProps {
 export async function generateMetadata({ params }: SerieIdPageProps) {
   const { id, locale } = params;
   const movie = await getMovieByPath(`/tv/${id}`, [], locale);
-
   return {
     title: movie.title,
     description: movie.overview,
@@ -22,7 +21,6 @@ export const revalidate = 3600;
 
 const SerieIdPage = async ({ params: { id, locale } }: SerieIdPageProps) => {
   const serie = await getMovieByPath(`/tv/${id}`, [], locale);
-
   if (!serie.name) {
     return notFound();
   }
