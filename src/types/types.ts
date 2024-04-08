@@ -14,6 +14,7 @@ export type mediaType = {
   vote_average: number;
   vote_count: number;
   production_companies: { name: string }[];
+  first_air_date?: string;
 };
 export type mediaCredits = {
   adult: boolean;

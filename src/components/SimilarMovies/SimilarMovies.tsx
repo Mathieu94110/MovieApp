@@ -4,9 +4,9 @@ import React from "react";
 import MediaCard from "../MediaCard/MediaCard";
 import { mediaType } from "@/types/types";
 
-const SimilarMovies = async ({ movieId, locale }: any) => {
+const SimilarMovies = async ({ movieId, type, locale }: { movieId: number; type: "movies" | "series" | "movie" | "tv"; locale: "fr" | "en" }) => {
   const { results } = await getMovieByPath(
-    `/movie/${movieId}/similar`,
+    `/${type}/${movieId}/similar`,
     [],
     locale
   );

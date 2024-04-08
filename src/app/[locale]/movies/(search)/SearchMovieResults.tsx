@@ -3,7 +3,14 @@ import MediaCard from "@/components/MediaCard/MediaCard";
 import styles from "./SearchMovieResults.module.scss";
 import { mediaType } from "@/types/types";
 
-const SearchMovieResults = async ({ searchParams, genreId, locale }: any) => {
+
+interface SearchMovieResultsProps {
+  searchParams: { [key: string]: string | string[] | undefined };
+  genreId: string;
+  locale: "fr" | "en"
+}
+
+const SearchMovieResults = async ({ searchParams, genreId, locale }: SearchMovieResultsProps) => {
   const { results } = await getMovieByPath(
     "/discover/movie",
     [

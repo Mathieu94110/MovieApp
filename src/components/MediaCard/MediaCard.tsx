@@ -5,11 +5,11 @@ import Link from "next/link";
 import Like from "./like/Like";
 import { mediaType } from "@/types/types";
 
-const MediaCard = ({ media, locale, type }): {
+const MediaCard = ({ media, locale, type }: {
   media: mediaType;
   type: "movies" | "series" | "movie" | "tv";
   locale: "fr" | "en"
-} => {
+}) => {
   return (
     <div className={styles.card}>
       <Link href={`/${locale}/${type === "movies" || type === "movie" ? "movies" : "series"

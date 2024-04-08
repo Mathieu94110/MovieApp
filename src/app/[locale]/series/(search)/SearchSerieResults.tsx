@@ -1,11 +1,11 @@
 import { getMovieByPath } from "@/utils/movieClient";
 import MediaCard from "@/components/MediaCard/MediaCard";
 import styles from "./SearchSerieResults.module.scss";
-import { searchParams } from "@/types/types";
+import { mediaType, searchParams } from "@/types/types";
 
 interface SearchSerieResultsProps {
   searchParams: searchParams
-  locale: string,
+  locale: 'en' | 'fr',
   genreId: number
 }
 
@@ -24,8 +24,8 @@ const SearchSerieResults = async ({ searchParams, genreId, locale }: SearchSerie
   return (
     <div className={styles.results}>
       {results
-        .filter((serie: any) => serie.poster_path)
-        .map((serie: any) => (
+        .filter((serie: mediaType) => serie.poster_path)
+        .map((serie: mediaType) => (
           <MediaCard key={serie.id} media={serie} locale={locale} type="series" />
         ))}
     </div>

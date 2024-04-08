@@ -3,11 +3,12 @@ import Image from "next/image";
 import styles from "./MovieDetails.module.scss";
 import MovieCredits from "../MovieCredits/MovieCredits";
 import { Suspense } from "react";
+import { mediaType } from "@/types/types";
 
 const MovieDetails = ({ movie,
   type }: {
-    movie: any;
-    type: "movies" | "series";
+    movie: mediaType;
+    type: "movie" | "tv";
   }) => {
   return (
     <div className={styles.details}>
@@ -28,7 +29,7 @@ const MovieDetails = ({ movie,
         <div className={styles.description}>
           <h1>
             {movie.title}{" "}
-            {type === "movies" ? (
+            {type === "movie" ? (
               <span className={styles.releaseDate}>
                 ({new Date(movie.release_date).toLocaleDateString("fr-FR")})
               </span>
@@ -57,7 +58,7 @@ const MovieDetails = ({ movie,
           </p>
           <div className={styles.credits}>
             <Suspense fallback={<p>Chargement ...</p>}>
-              <MovieCredits movieId={movie.id} />
+              <MovieCredits movieId={movie.id} type={type} />
             </Suspense>
           </div>
         </div>

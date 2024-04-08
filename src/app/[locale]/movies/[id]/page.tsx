@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import React, { Suspense } from "react";
 
 interface MovieIdPageProps {
-  params: { id: string; locale: string };
+  params: { id: string; locale: 'en' | 'fr' };
 }
 export const dynamic = "force-static";
 export const revalidate = 3600;
@@ -19,7 +19,7 @@ const MovieIdPage = async ({ params: { id, locale } }: MovieIdPageProps) => {
 
   return (
     <div>
-      <MovieDetails movie={movie} type="movies" />
+      <MovieDetails movie={movie} type="movie" />
       <Suspense fallback={<p>Chargement ...</p>}>
         <SimilarMovies movieId={movie.id} locale={locale} type="movie" />
       </Suspense>
