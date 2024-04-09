@@ -3,6 +3,7 @@ import Link from "next/link";
 import React from "react";
 import { mediaType } from "@/types/types";
 import styles from "./MovieSearchResults.module.scss";
+import mysteryMedia from '../../../../public/mystery.jpg'
 
 const MovieSearchResults = ({
   movieResults,
@@ -22,7 +23,7 @@ const MovieSearchResults = ({
             <Image
               width={90}
               height={50}
-              src={`${process.env.NEXT_PUBLIC_TMDB_IMAGE_BASE_PATH}/w500${movie.backdrop_path}`}
+              src={`${process.env.NEXT_PUBLIC_TMDB_IMAGE_BASE_PATH}/w500${movie.backdrop_path ? movie.backdrop_path : mysteryMedia}`}
               alt={movie.title}
             />
             <p>{movie.title}</p>

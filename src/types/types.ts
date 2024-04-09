@@ -10,11 +10,12 @@ export type mediaType = {
   poster_path: string;
   release_date: string;
   title: string;
+  name?: string;
   video: boolean;
   vote_average: number;
   vote_count: number;
   production_companies: { name: string }[];
-  first_air_date?: string;
+  first_air_date: string;
 };
 export type mediaCredits = {
   adult: boolean;

@@ -3,6 +3,7 @@ import Image from "next/image";
 import { getMovieByPath } from "@/utils/movieClient";
 import { mediaCredits } from "@/types/types";
 import styles from "./MovieCredits.module.scss";
+import mysteryPerson from "../../../public/mystery-person.jpg";
 
 const MovieCredits = async ({
   movieId,
@@ -18,7 +19,7 @@ const MovieCredits = async ({
         <div key={person.id}>
           <div className={styles.movieCreditsImg}>
             <Image
-              src={`${process.env.NEXT_PUBLIC_TMDB_IMAGE_BASE_PATH}/w185${person.profile_path}`}
+              src={`${process.env.NEXT_PUBLIC_TMDB_IMAGE_BASE_PATH}/w185${person.profile_path ? person.profile_path : mysteryPerson}`}
               alt={person.name}
               layout="fill"
               objectFit="cover"

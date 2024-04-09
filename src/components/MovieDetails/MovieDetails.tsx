@@ -4,6 +4,7 @@ import styles from "./MovieDetails.module.scss";
 import MovieCredits from "../MovieCredits/MovieCredits";
 import { Suspense } from "react";
 import { mediaType } from "@/types/types";
+import mysteryMedia from "../../../public/mystery.jpg";
 
 const MovieDetails = ({ movie,
   type }: {
@@ -21,7 +22,7 @@ const MovieDetails = ({ movie,
       </div>
       <div className={styles.content}>
         <Image
-          src={`${process.env.NEXT_PUBLIC_TMDB_IMAGE_BASE_PATH}/w342${movie.poster_path}`}
+          src={`${process.env.NEXT_PUBLIC_TMDB_IMAGE_BASE_PATH}/w342${movie.poster_path ? movie.poster_path : mysteryMedia}`}
           width={250}
           height={400}
           alt={movie.title}
