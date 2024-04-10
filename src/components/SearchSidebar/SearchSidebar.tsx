@@ -10,8 +10,10 @@ import styles from "./SearchSideBar.module.scss";
 
 const SearchSidebar = ({
   genres,
+  type
 }: {
   genres: { id: number; name: string }[];
+  type: "movie" | "tv"
 }) => {
   const segment = useSelectedLayoutSegment();
   const pathName = usePathname();
@@ -34,7 +36,7 @@ const SearchSidebar = ({
   return (
     <div className={styles.sidebar}>
       <h1>{title}</h1>
-      <Form />
+      <Form type={type} />
     </div>
   );
 };

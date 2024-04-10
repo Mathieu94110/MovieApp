@@ -24,7 +24,7 @@ const MovieSearch = () => {
         minLength={2}
         debounceTimeout={500}
         onChange={(e) => updateMovieSearch(e.target.value)}
-        placeholder="Rechercher un film ..."
+        placeholder="Rechercher un film ou une série..."
         onBlurCapture={() => setHasFocus(false)}
         onFocus={() => setHasFocus(true)}
         className={styles.debounceInput}

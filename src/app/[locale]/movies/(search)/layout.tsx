@@ -14,7 +14,7 @@ const MovieSearchLayout = async ({
   const { genres } = await getMovieByPath("/genre/movie/list", [], locale);
   return (
     <div className={styles.searchContainer}>
-      <SearchSidebar genres={genres} />
+      <SearchSidebar genres={genres} type='movie' />
       <div>{children}</div>
     </div>
   );

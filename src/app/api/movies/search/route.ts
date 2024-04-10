@@ -5,7 +5,7 @@ export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
   const query = searchParams.get("query") as string;
 
-  const searchResults = await getMovieByPath("/search/movie", [
+  const searchResults = await getMovieByPath("/search/multi", [
     {
       key: "query",
       value: query,

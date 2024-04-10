@@ -2,7 +2,7 @@
 import styles from "./Form.module.scss";
 import { useRouter, usePathname } from "next/navigation";
 
-const Form = () => {
+const Form = ({ type }: { type: 'movie' | 'tv' }) => {
   const router = useRouter();
   const pathname = usePathname();
 
@@ -11,8 +11,8 @@ const Form = () => {
     const form = new FormData(e.currentTarget);
     const searchParams = new URLSearchParams();
     searchParams.append("sort_by", form.get("sort") as string);
-    searchParams.append("release_date.gte", form.get("fromDate") as string);
-    searchParams.append("release_date.lte", form.get("toDate") as string);
+    searchParams.append(type === "movie" ? "release_date.gte" : "first_air_date.gte", form.get("fromDate") as string);
+    searchParams.append(type === "movie" ? "release_date.lte" : "first_air_date.lte", form.get("toDate") as string);
 
     router.push(`${pathname}?${searchParams.toString()}`);
   };

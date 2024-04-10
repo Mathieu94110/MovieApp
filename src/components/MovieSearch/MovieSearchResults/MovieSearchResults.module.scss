@@ -11,7 +11,16 @@
   max-height: 50vh;
   overflow-y: auto;
   right: 0px;
-  > div > a {
+
+  .categories {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $primaryColor
+  }
+
+  >div>a {
     display: flex;
     align-items: center;
     padding: 10px 0;
@@ -37,6 +46,7 @@
     }
   }
 }
+
 @media screen and (min-width: 700px) {
   .searchResults {
     max-height: 80vh;
