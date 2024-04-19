@@ -1,17 +1,13 @@
 import React from "react";
 import SearchSerieResults from "../../SearchSerieResults";
+import { searchParams } from "@/types/types";
 
-
-interface GenreIdPageProps {
-    params: {
-        id: number,
-        locale: "fr" | "en"
-    }
-    searchParams: { [key: string]: string | string[] | undefined };
+interface SeriesGenreIdProps {
+    searchParams: searchParams
+    params: { locale: "en" | "fr", id: string }
 }
 
-
-const GenreIdPage = ({ params: { id, locale }, searchParams }: GenreIdPageProps) => {
+const GenreIdPage = ({ params: { id, locale }, searchParams }: SeriesGenreIdProps) => {
     return (
         <SearchSerieResults searchParams={searchParams} genreId={id} locale={locale} />
     );
