@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import styles from "./MediaCard.module.scss";
 import Link from "next/link";
-import Like from "./like/Like";
+import Like from "./Like/Like";
 import { mediaType } from "@/types/types";
 import mysteryMedia from "../../../public/mystery.jpg";
 
