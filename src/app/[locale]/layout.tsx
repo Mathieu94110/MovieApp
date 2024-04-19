@@ -8,7 +8,7 @@ import { ReactNode } from "react";
 
 interface LayoutProps {
   children?: ReactNode
-  params: { locale: string }
+  params: { locale: "en" | "fr" }
 }
 
 export const metadata = {

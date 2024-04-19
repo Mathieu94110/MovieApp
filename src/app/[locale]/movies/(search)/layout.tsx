@@ -4,7 +4,7 @@ import styles from "./layout.module.scss";
 
 interface MovieSearchLayoutProps {
   children: React.ReactNode;
-  params: { locale: string };
+  params: { locale: "en" | "fr" };
 }
 
 const MovieSearchLayout = async ({

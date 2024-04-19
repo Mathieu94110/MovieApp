@@ -9,7 +9,7 @@ export function generateStaticParams() {
   }));
 }
 
-export default function Home({ params: { locale } }: { params: { locale: string } }) {
+export default function Home({ params: { locale } }: { params: { locale: "en" | "fr" } }) {
   return (
     <div className={styles.main}>
       <Popular locale={locale} />

@@ -4,7 +4,7 @@ import { searchParams } from "@/types/types";
 
 interface MoviesGenreIdProps {
   searchParams: searchParams
-  params: { locale: string, id: number }
+  params: { locale: "en" | "fr", id: string }
 }
 
 const GenreIdPage = ({ params: { id, locale }, searchParams }: MoviesGenreIdProps) => {

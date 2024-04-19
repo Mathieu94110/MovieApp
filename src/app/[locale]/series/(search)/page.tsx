@@ -4,7 +4,7 @@ import { searchParams } from "@/types/types";
 
 interface SeriesPagedProps {
   searchParams: searchParams
-  params: { locale: string }
+  params: { locale: "en" | "fr" }
 }
 
 const SeriesPage = ({ searchParams, params: { locale } }: SeriesPagedProps) => {
