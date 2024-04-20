@@ -28,6 +28,7 @@
     "server-only": "^0.0.1"
   },
   "devDependencies": {
+    "@types/negotiator": "^0.6.3",
     "@types/node": "20.11.30",
     "@types/react": "18.2.71",
     "prisma": "^4.16.2"

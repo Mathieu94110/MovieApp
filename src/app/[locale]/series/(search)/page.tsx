@@ -4,11 +4,11 @@ import { searchParams } from "@/types/types";
 
 interface SeriesPagedProps {
   searchParams: searchParams
-  params: { locale: "en" | "fr" }
+  params: { id: string, locale: "en" | "fr" }
 }
 
-const SeriesPage = ({ searchParams, params: { locale } }: SeriesPagedProps) => {
-  return <SearchSerieResults searchParams={searchParams} locale={locale} />;
+const SeriesPage = ({ searchParams, params: { id, locale } }: SeriesPagedProps) => {
+  return <SearchSerieResults searchParams={searchParams} genreId={id} locale={locale} />;
 };
 
 export default SeriesPage;

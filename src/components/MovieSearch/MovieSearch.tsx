@@ -10,7 +10,7 @@ import styles from "./MovieSearch.module.scss";
 const MovieSearch = () => {
   const [movieResults, setMovieResults] = useState<mediaType[]>([]);
   const [hasFocus, setHasFocus] = useState<boolean>(false);
-  const currentLanguage = useCurrentLanguage() as string;
+  const currentLanguage = useCurrentLanguage() as "en" | "fr";
 
   const updateMovieSearch = async (query: string) => {
     const response = await fetch(`/api/movies/search?query=${query}`);

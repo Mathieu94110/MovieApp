@@ -1,8 +1,7 @@
-import React from "react";
+import React, { Suspense } from "react";
 import Image from "next/image";
 import styles from "./MovieDetails.module.scss";
 import MovieCredits from "../MovieCredits/MovieCredits";
-import { Suspense } from "react";
 import { mediaType } from "@/types/types";
 import mysteryMedia from "../../../public/mystery.jpg";
 

@@ -4,11 +4,11 @@ import { searchParams } from "@/types/types";
 
 interface MoviesPageProps {
   searchParams: searchParams
-  params: { locale: "en" | "fr" }
+  params: { id: string, locale: "en" | "fr" }
 }
 
-const MoviesPage = ({ searchParams, params: { locale } }: MoviesPageProps) => {
-  return <SearchMovieResults searchParams={searchParams} locale={locale} />;
-};
+const MoviesPage = ({ searchParams, params: { id, locale } }: MoviesPageProps) => {
+  return <SearchMovieResults searchParams={searchParams} genreId={id} locale={locale} />;
 
+}
 export default MoviesPage;

@@ -1,6 +1,6 @@
 "use client";
 import { signIn, useSession } from "next-auth/react";
-import { useEffect } from "react";
+import { FormEvent, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import styles from "./SignUpForm.module.scss";
 
@@ -10,11 +10,11 @@ const SignupForm = () => {
 
     useEffect(() => {
         if (status === "authenticated") {
-            router.push("/user/profile");
+            router.push("/user/profile" as any);
         }
     }, [status, router]);
 
-    const handleFormSubmit = (e) => {
+    const handleFormSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
         fetch("/api/signup", {

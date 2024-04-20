@@ -36,7 +36,8 @@
     ".next/types/**/*.ts",
     "src/app/[locale]/movies/(search)/SearchMovieResults.js",
     "src/app/[locale]/series/(search)/genres/[id]/page.tsx",
-    "src/app/[locale]/series/(search)/SearchSerieResults.js"
+    "src/app/[locale]/series/(search)/SearchSerieResults.js",
+    "src/utils/i18n.js"
   ],
   "exclude": [
     "node_modules"

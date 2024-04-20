@@ -14,7 +14,8 @@ const Form = ({ type }: { type: 'movie' | 'tv' }) => {
     searchParams.append(type === "movie" ? "release_date.gte" : "first_air_date.gte", form.get("fromDate") as string);
     searchParams.append(type === "movie" ? "release_date.lte" : "first_air_date.lte", form.get("toDate") as string);
 
-    router.push(`${pathname}?${searchParams.toString()}`);
+    router.push(`${pathname}?${searchParams.toString()}` as any);
+
   };
 
   return (

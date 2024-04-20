@@ -37,6 +37,5 @@ export type mediaCredits = {
 export type searchParams = {
   sort_by: string;
   release_date: { gte: string; lte: string };
-  genreID: string;
   locale: "en" | "fr";
 };
