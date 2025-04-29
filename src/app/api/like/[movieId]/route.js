@@ -2,7 +2,9 @@ import prisma from "@/utils/prisma";
 import { getToken } from "next-auth/jwt";
 import { NextResponse } from "next/server";
 
-export async function POST(request, { params: { movieId } }) {
+export async function POST(request, context) {
+    const { movieId } = context.params;
+
     const token = await getToken({ req: request });
 
     if (!token) {
@@ -10,12 +12,10 @@ export async function POST(request, { params: { movieId } }) {
     }
 
     const user = await prisma.user.update({
-        where: {
-            email: token.email,
-        },
+        where: { email: token.email },
         data: {
             movieLikes: {
-                create: [{ movieId }],
+                create: [{ movieId: String(movieId) }],
             },
         },
     });
