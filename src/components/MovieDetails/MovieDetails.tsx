@@ -17,6 +17,7 @@ const MovieDetails = ({ movie,
           src={`${process.env.NEXT_PUBLIC_TMDB_IMAGE_BASE_PATH}/original${movie.backdrop_path}`}
           alt={movie.title}
           fill
+          unoptimized
         />
       </div>
       <div className={styles.content}>
@@ -25,6 +26,7 @@ const MovieDetails = ({ movie,
           width={250}
           height={400}
           alt={movie.title}
+          unoptimized
         />
         <div className={styles.description}>
           <h1>

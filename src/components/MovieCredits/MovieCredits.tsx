@@ -23,6 +23,7 @@ const MovieCredits = async ({
               alt={person.name}
               layout="fill"
               objectFit="cover"
+              unoptimized
             />
           </div>
           <p>{person.name}</p>

@@ -22,6 +22,7 @@ const MediaCard = ({ media, locale, type }: {
             src={`${process.env.NEXT_PUBLIC_TMDB_IMAGE_BASE_PATH}/w500${media.poster_path ? media.poster_path : mysteryMedia}`}
             alt={media.title}
             fill
+            unoptimized
           />
         </div>
         <div className={styles.content}>

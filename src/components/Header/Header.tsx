@@ -13,7 +13,7 @@ const Header = ({ locale }: { locale: 'en' | 'fr' }) => {
     <header className={styles.header}>
       <div className={styles.logoContainer}>
         <Link href={`/${locale}`} className={styles.logo}>
-          <Image src={appLogo} alt="Films et series" height={40} />
+          <Image src={appLogo} alt="Films et series" height={40} unoptimized />
         </Link>
       </div>
       <div className={styles.navigation}>

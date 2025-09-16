@@ -42,6 +42,7 @@ const MovieSearchResults = ({
                   src={`${process.env.NEXT_PUBLIC_TMDB_IMAGE_BASE_PATH}/w500${movie.backdrop_path ? movie.backdrop_path : mysteryMedia}`}
                   alt={movie.title
                   }
+                  unoptimized
                 />
                 <p>{movie.title}</p>
               </Link>
@@ -66,6 +67,7 @@ const MovieSearchResults = ({
                   src={`${process.env.NEXT_PUBLIC_TMDB_IMAGE_BASE_PATH}/w500${serie.backdrop_path ? serie.backdrop_path : mysteryMedia}`}
                   alt={serie.original_name
                   }
+                  unoptimized
                 />
                 <p>{serie.original_name}</p>
               </Link>
